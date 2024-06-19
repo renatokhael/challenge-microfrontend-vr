@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+}
+
+.header {
+  width: 100vh;
+  background: #02d72f;
+  padding: 10px;
+}
