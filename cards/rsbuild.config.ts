@@ -19,6 +19,7 @@ export default defineConfig({
           name: "cards",
           exposes: {
             "./cards": "./src/cards.tsx",
+            "./shared-context": "./src/shared-context.tsx",
           },
           shared: ["react", "react-dom"],
         }),
