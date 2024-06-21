@@ -2,7 +2,8 @@ import styled, { createGlobalStyle } from "styled-components";
 import logo from "./assets/logo.svg";
 import checkout from "./assets/checkout.svg";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
+import { useSharedContext } from "cards/shared-context";
 
 const GlobalStyle = createGlobalStyle<{ isDrawerOpen: boolean }>`
   body {
@@ -11,10 +12,11 @@ const GlobalStyle = createGlobalStyle<{ isDrawerOpen: boolean }>`
 `;
 
 const StyledHeader = styled.header`
+  position: fixed;
   display: flex;
   width: 100%;
+  height: 64px;
   background: #02d72f;
-  padding: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 `;
 
@@ -37,7 +39,8 @@ const Drawer = styled.div<{ isOpen: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
-  width: 500px;
+  width: 450px;
+
   padding: 28px;
   height: 100%;
   background: white;
@@ -46,6 +49,10 @@ const Drawer = styled.div<{ isOpen: boolean }>`
   transition: transform 0.3s ease-in-out;
   z-index: 2;
   overflow-y: auto;
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const Overlay = styled.div<{ isOpen: boolean }>`
@@ -128,30 +135,29 @@ const Button = styled.button`
   border: none;
   padding: 10px 20px;
   border-radius: 25px;
+  font-weight: 600;
   cursor: pointer;
   &:hover {
     background: #218838;
   }
 `;
 
-const Header: React.FC = () => {
+const ButtonCancel = styled.button`
+  color: #1b2126;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+`;
+
+export default function Header() {
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const [cartItems, setCartItems] = useState([]);
+  const { cartItems } = useSharedContext();
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
-
-  useEffect(() => {
-    axios
-      .get("https://dummyjson.com/carts/1")
-      .then((response) => {
-        setCartItems(response.data.products);
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar os dados do carrinho", error);
-      });
-  }, []);
 
   return (
     <>
@@ -184,11 +190,9 @@ const Header: React.FC = () => {
         ))}
         <Footer>
           <Button>Concluir compras</Button>
-          <Button onClick={toggleDrawer}>Cancelar</Button>
+          <ButtonCancel onClick={toggleDrawer}>Cancelar</ButtonCancel>
         </Footer>
       </Drawer>
     </>
   );
-};
-
-export default Header;
+}

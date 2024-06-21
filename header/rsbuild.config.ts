@@ -20,6 +20,10 @@ export default defineConfig({
           exposes: {
             "./header": "./src/header.tsx",
           },
+          remotes: {
+            cards: "cards@http://localhost:3002/remoteEntry.js",
+          },
+
           shared: ["react", "react-dom"],
         }),
       ]);
