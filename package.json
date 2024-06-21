@@ -1,0 +1,12 @@
+{
+  "name": "challenge-microfrontend-vr",
+  "version": "1.0.0",
+  "description": "Aplicação de microfrontends utilizando Module Federation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Renato Khael",
+  "license": "ISC"
+}

@@ -1,3 +1,1 @@
-import React from "react";
-declare const Header: React.FC;
-export default Header;
+export default function Header(): import("react/jsx-runtime").JSX.Element;

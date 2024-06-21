@@ -1,9 +1,9 @@
 import "./App.css";
 import styled from "styled-components";
-// The remote component provided by federation_provider
 import ProviderHeader from "header/header";
 import ProviderFooter from "footer/footer";
 import ProviderCards from "cards/cards";
+import { SharedContextProvider } from "cards/shared-context";
 
 const AppContainer = styled.div`
   display: flex;
@@ -18,13 +18,15 @@ const Content = styled.div`
 `;
 const App = () => {
   return (
-    <AppContainer>
-      <ProviderHeader />
-      <Content>
-        <ProviderCards />
-      </Content>
-      <ProviderFooter />
-    </AppContainer>
+    <SharedContextProvider>
+      <AppContainer>
+        <ProviderHeader />
+        <Content>
+          <ProviderCards />
+        </Content>
+        <ProviderFooter />
+      </AppContainer>
+    </SharedContextProvider>
   );
 };
 
