@@ -4,7 +4,9 @@
 ![Typescript](https://img.shields.io/badge/typescript-5.4.2-blue)
 ![StyledComponents](https://img.shields.io/badge/styled--components-6.1.11-blue)
 
-Essa é uma aplicação ReactJS que utiliza a arquitetura Module Federation para descentralização de aplicativos e componentes. Ela possui um app central (host) e mais 3 aplicações, sendo elas: Header, Footer e Cards que consome uma lista de produtos da API (https://dummyjson.com/docs/products). Além disso, existe uma interação da lista de produtos com o Header, onde o mesmo exibe um modal/drawer com a lista de produtos selecionados.
+Essa é uma aplicação ReactJS que utiliza a arquitetura Module Federation para descentralização de aplicativos e componentes, seguindo as práticas mais modernas https://module-federation.io/
+
+Abaixo, você pode visualizar a aplicação Host, que consome as outras aplicações Header, Cards e Footer.
 
 <center><img src=".github/preview.png" width="768px" /></center>
 
@@ -21,7 +23,7 @@ Essa é uma aplicação ReactJS que utiliza a arquitetura Module Federation para
 
 ## Deploy
 
-Você pode ver o deploy dessa aplicação aqui: [Vercel](https://app-starwars-vue3.vercel.app/)
+Você pode ver o deploy dessa aplicação aqui: [Vercel](challenge-microfrontend-vr.vercel.app)
 
 ## Funcionalidades
 
