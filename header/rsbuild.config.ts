@@ -21,7 +21,7 @@ export default defineConfig({
             "./header": "./src/header.tsx",
           },
           remotes: {
-            cards: "cards@http://localhost:3002/remoteEntry.js",
+            cards: "cards@http://localhost:3002/mf-manifest.json",
           },
 
           shared: ["react", "react-dom"],

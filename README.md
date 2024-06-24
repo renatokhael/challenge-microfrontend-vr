@@ -19,6 +19,10 @@ Abaixo, você pode visualizar a aplicação Host, que consome as outras aplicaç
   - [Requisitos](#requisitos)
   - [Instalação](#instalação)
   - [Uso](#uso)
+    - [Usando Docker](#usando-docker)
+    - [Usando Linux ou WSL (Windows) - Recomendado](#usando-linux-ou-wsl-windows---recomendado)
+    - [Rodando localmente](#rodando-localmente)
+  - [Rodando Testes e2e](#rodando-testes-e2e)
   - [Contribuição](#contribuição)
   - [License](#license)
 
@@ -77,17 +81,20 @@ Você pode visualizar a aplicação completa através do host: `http://localhost
 ```
 docker-compose up --build
 ```
+
 Você pode visualizar a aplicação completa através do host: http://localhost:3000/mf-manifest.json
 
 ### Usando Linux ou WSL (Windows) - Recomendado
 
 ```
-chmod +x start-all.sh 
+chmod +x start-all.sh
 ./start-all.sh
 ```
+
 Espere até que todos os modulos sejam instalados então acesse: `http://localhost:3000/mf-manifest.json`
 
 ### Rodando localmente
+
 Rode como desenvolvedor:
 
 ```bash
@@ -108,9 +115,15 @@ npm run preview
 
 ## Rodando Testes e2e
 
+Se estiver usando WSL, por favor, rode o comando abaixo para instalar as libs do Ubuntu:
+
+```
+apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+```
+
 ```
 npm i cypress
-npm run test:ci
+npm run cy:open
 ```
 
 ## Contribuição

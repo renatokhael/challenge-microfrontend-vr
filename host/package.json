@@ -15,10 +15,15 @@
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
     "@rsbuild/core": "^0.7.9",
     "@rsbuild/plugin-react": "^0.7.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "react-test-renderer": "^18.3.1",
     "typescript": "^5.4.2"
   }
 }

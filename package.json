@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "install": "",
-    "start": "npm --filter challenge-microfrontend-vr* --parallel start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./start-all.sh",
+    "cy:open": "cypress open"
   },
   "keywords": [],
   "author": "Renato Khael",

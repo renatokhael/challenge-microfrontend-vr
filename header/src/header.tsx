@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import logo from "./assets/logo.svg";
 import checkout from "./assets/checkout.svg";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { useSharedContext } from "cards/shared-context";
 
