@@ -1,0 +1,37 @@
+version: "3"
+services:
+  header:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /challenge-microfrontend-vr/header
+    command: npm run dev
+    ports:
+      - "3001:3001"
+
+  footer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /challenge-microfrontend-vr/footer
+    command: npm run dev
+    ports:
+      - "3002:3002"
+
+  cards:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /challenge-microfrontend-vr/cards
+    command: npm run dev
+    ports:
+      - "3003:3003"
+
+  host:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /challenge-microfrontend-vr/host
+    command: npm run dev
+    ports:
+      - "3000:3000"

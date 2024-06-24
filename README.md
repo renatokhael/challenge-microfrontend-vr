@@ -4,7 +4,7 @@
 ![Typescript](https://img.shields.io/badge/typescript-5.4.2-blue)
 ![StyledComponents](https://img.shields.io/badge/styled--components-6.1.11-blue)
 
-Essa é uma aplicação ReactJS que utiliza a arquitetura Module Federation para descentralização de aplicativos e componentes, seguindo as práticas mais modernas https://module-federation.io/
+Essa é uma aplicação ReactJS que utiliza a arquitetura Module Federation para descentralização de aplicativos e componentes, seguindo as práticas mais modernas `https://module-federation.io/`
 
 Abaixo, você pode visualizar a aplicação Host, que consome as outras aplicações Header, Cards e Footer.
 
@@ -16,6 +16,7 @@ Abaixo, você pode visualizar a aplicação Host, que consome as outras aplicaç
   - [Conteúdo](#conteúdo)
   - [Deploy](#deploy)
   - [Funcionalidades](#funcionalidades)
+  - [Requisitos](#requisitos)
   - [Instalação](#instalação)
   - [Uso](#uso)
   - [Contribuição](#contribuição)
@@ -38,6 +39,10 @@ Você pode ver o deploy dessa aplicação aqui: [Vercel](challenge-microfrontend
 - [ ] A aplicação Cards deve ter testes unitários usando Jest e RTL
 - [ ] A aplicação Header deve ter testes unitários usando Jest e RTL
 - [ ] A aplicação Host deve ter um teste e2e usando cypress
+
+## Requisitos
+
+Node: 20.14.0
 
 ## Instalação
 
@@ -67,6 +72,22 @@ Você pode visualizar a aplicação completa através do host: `http://localhost
 
 ## Uso
 
+### Usando Docker
+
+```
+docker-compose up --build
+```
+Você pode visualizar a aplicação completa através do host: http://localhost:3000/mf-manifest.json
+
+### Usando Linux ou WSL (Windows) - Recomendado
+
+```
+chmod +x start-all.sh 
+./start-all.sh
+```
+Espere até que todos os modulos sejam instalados então acesse: `http://localhost:3000/mf-manifest.json`
+
+### Rodando localmente
 Rode como desenvolvedor:
 
 ```bash
@@ -83,6 +104,13 @@ Pré-visualização do build de produção:
 
 ```bash
 npm run preview
+```
+
+## Rodando Testes e2e
+
+```
+npm i cypress
+npm run test:ci
 ```
 
 ## Contribuição
